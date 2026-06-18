@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khushi Aryal | Portfolio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
 
 /* THEME */
@@ -21,24 +19,17 @@
   --border:#E3DED6;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{ margin:0; padding:0; box-sizing:border-box; }
 
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:100px;
-}
+html{ scroll-behavior:smooth; scroll-padding-top:100px; }
 
 body{
   font-family:'Poppins',sans-serif;
   color:var(--text);
   background:
-  radial-gradient(circle at top left,#E8F0E8 0%,transparent 35%),
-  radial-gradient(circle at bottom right,#F2EDE4 0%,transparent 35%),
-  var(--bg);
+    radial-gradient(circle at top left,#E8F0E8 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#F2EDE4 0%,transparent 35%),
+    var(--bg);
 }
 
 /* NAVBAR */
@@ -61,82 +52,58 @@ nav{
   border:1px solid var(--border);
 }
 
-.logo{
-  font-size:22px;
-  font-weight:700;
-  color:var(--primary);
-}
+.logo{ font-size:22px; font-weight:700; color:var(--primary); white-space:nowrap; }
 
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:25px;
-}
+nav ul{ list-style:none; display:flex; gap:25px; }
 
-nav a{
-  text-decoration:none;
-  color:var(--text);
-  transition:.3s;
-}
+nav a{ text-decoration:none; color:var(--text); transition:.3s; font-size:15px; }
+nav a:hover{ color:var(--primary); }
 
-nav a:hover{
-  color:var(--primary);
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:4px;
 }
+.hamburger span{
+  display:block; width:24px; height:2px;
+  background:var(--primary); border-radius:2px; transition:.3s;
+}
+.hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2){ opacity:0; }
+.hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* HERO */
-header{
-  text-align:center;
-  padding:180px 20px 100px;
-}
+header{ text-align:center; padding:180px 20px 100px; }
 
 header img{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius:50%;
-  border:6px solid white;
-  box-shadow:
-  0 0 0 8px #E8F0E8,
-  0 0 0 16px #F2EDE4;
+  width:160px; height:160px; object-fit:cover;
+  border-radius:50%; border:6px solid white;
+  box-shadow: 0 0 0 8px #E8F0E8, 0 0 0 16px #F2EDE4;
   transition:.4s;
 }
+header img:hover{ transform:scale(1.08) rotate(3deg); }
 
-header img:hover{
-  transform:scale(1.08) rotate(3deg);
-}
-
-header h1{
-  margin-top:35px;
-  font-size:50px;
-  color:var(--primary);
-}
-
-header p{
-  margin-top:10px;
-  color:var(--text-light);
-  font-size:18px;
-}
+header h1{ margin-top:35px; font-size:clamp(30px,6vw,50px); color:var(--primary); }
+header p{ margin-top:10px; color:var(--text-light); font-size:clamp(14px,2.5vw,18px); padding:0 10px; }
 
 /* BUTTON */
 .btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:12px 30px;
-  text-decoration:none;
-  color:white;
-  border-radius:40px;
+  display:inline-block; margin-top:30px; padding:12px 30px;
+  text-decoration:none; color:white; border-radius:40px;
   background:linear-gradient(135deg,#7A8F7A,#A3B5A3);
-  box-shadow:var(--shadow);
-  transition:.3s;
+  box-shadow:var(--shadow); transition:.3s;
 }
-
-.btn:hover{
-  transform:translateY(-5px) scale(1.05);
-}
+.btn:hover{ transform:translateY(-5px) scale(1.05); }
 
 /* SECTIONS */
 section{
   max-width:850px;
+  width:calc(100% - 30px);
   margin:35px auto;
   padding:30px;
   background:var(--card);
@@ -147,157 +114,127 @@ section{
   scroll-margin-top:100px;
   border:1px solid var(--border);
 }
+section:hover{ transform:translateY(-8px); }
 
-section:hover{
-  transform:translateY(-8px);
-}
-
-h2{
-  color:var(--primary);
-  margin-bottom:20px;
-}
+h2{ color:var(--primary); margin-bottom:20px; font-size:clamp(18px,3vw,24px); }
 
 /* SKILLS */
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
+.skills{ display:flex; flex-wrap:wrap; gap:12px; }
 .skills span{
-  padding:10px 18px;
-  border-radius:30px;
+  padding:10px 18px; border-radius:30px;
   background:linear-gradient(135deg,#E8F0E8,#F2EDE4);
-  box-shadow:var(--shadow);
-  transition:.3s;
-  color:var(--text);
+  box-shadow:var(--shadow); transition:.3s; color:var(--text); font-size:14px;
 }
-
-.skills span:hover{
-  transform:scale(1.08);
-}
+.skills span:hover{ transform:scale(1.08); }
 
 /* PROJECT */
 .project{
-  background:white;
-  border-radius:25px;
-  padding:20px;
-  box-shadow:var(--shadow);
-  transition:.4s;
-  border:1px solid var(--border);
+  background:white; border-radius:25px; padding:20px;
+  box-shadow:var(--shadow); transition:.4s; border:1px solid var(--border);
 }
-
-.project:hover{
-  transform:translateY(-8px) rotate(-1deg);
-}
+.project:hover{ transform:translateY(-8px) rotate(-1deg); }
 
 /* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
+.gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
 
 .gallery .project img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:20px;
-  margin-bottom:15px;
-  box-shadow:var(--shadow);
-  transition:.4s;
+  width:100%; height:220px; object-fit:cover;
+  border-radius:20px; margin-bottom:15px;
+  box-shadow:var(--shadow); transition:.4s;
 }
-
-.gallery .project img:hover{
-  transform:scale(1.05);
-}
+.gallery .project img:hover{ transform:scale(1.05); }
 
 /* CONTACT BUTTON */
 .contact-btn{
-  display:inline-block;
-  margin-top:20px;
-  text-decoration:none;
-  color:white;
-  padding:12px 25px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#7A8F7A,#A3B5A3);
-  transition:.3s;
+  display:inline-block; margin-top:20px; text-decoration:none;
+  color:white; padding:12px 25px; border-radius:30px;
+  background:linear-gradient(135deg,#7A8F7A,#A3B5A3); transition:.3s;
 }
-
-.contact-btn:hover{
-  transform:translateY(-5px);
-}
+.contact-btn:hover{ transform:translateY(-5px); }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:50px 20px;
-}
+footer{ text-align:center; padding:50px 20px; }
+footer h3{ color:var(--primary); margin-bottom:10px; }
+footer p{ color:var(--text-light); font-size:14px; }
 
-footer h3{
-  color:var(--primary);
-  margin-bottom:10px;
-}
-
-footer p{
-  color:var(--text-light);
-}
-
-.socials{
-  margin:20px 0;
-}
-
+.socials{ margin:20px 0; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
 .socials a{
-  text-decoration:none;
-  margin:0 10px;
-  color:var(--primary);
-  background:white;
-  padding:10px 16px;
-  border-radius:30px;
-  box-shadow:var(--shadow);
-  transition:.3s;
-  border:1px solid var(--border);
+  text-decoration:none; color:var(--primary); background:white;
+  padding:10px 16px; border-radius:30px; box-shadow:var(--shadow);
+  transition:.3s; border:1px solid var(--border); font-size:14px;
 }
+.socials a:hover{ transform:translateY(-5px); background:var(--primary); color:white; }
 
-.socials a:hover{
-  transform:translateY(-5px);
-  background:var(--primary);
-  color:white;
-}
+/* ── TABLET (≤768px) ── */
+@media(max-width:768px){
 
-/* MOBILE */
-(max-width:700px){
-  nav{
-    flex-direction:column;
-    gap:10px;
-    padding:18px;
-  }
+  nav{ border-radius:25px; padding:14px 20px; top:10px; }
+
+  .hamburger{ display:flex; }
 
   nav ul{
-    gap:15px;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:none;
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0; right:0;
+    background:rgba(255,255,255,0.97);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    flex-direction:column;
+    gap:0; padding:10px 0;
+    text-align:center;
+  }
+  nav ul.open{ display:flex; }
+  nav ul li a{ display:block; padding:12px 20px; font-size:15px; }
+  nav ul li a:hover{ background:#F6F1E9; color:var(--primary); }
+
+  header{ padding:130px 20px 70px; }
+  header img{ width:120px; height:120px; }
+  header h1{ margin-top:25px; }
+
+  section{ margin:20px auto; padding:22px 18px; border-radius:22px; width:calc(100% - 24px); }
+
+  .gallery{ grid-template-columns:1fr; }
+  .gallery .project img{ height:180px; }
+}
+
+/* ── MOBILE (≤480px) ── */
+@media(max-width:480px){
+  nav{ padding:12px 16px; width:94%; }
+  .logo{ font-size:18px; }
+
+  header{ padding:110px 16px 60px; }
+  header img{
+    width:100px; height:100px;
+    box-shadow: 0 0 0 6px #E8F0E8, 0 0 0 12px #F2EDE4;
   }
 
-  header h1{
-    font-size:38px;
-  }
+  .btn, .contact-btn{ padding:11px 22px; font-size:14px; }
+  .skills span{ padding:8px 14px; font-size:13px; }
+  footer{ padding:35px 16px; }
 }
+
+/* REDUCE MOTION */
+@media(prefers-reduced-motion:reduce){ *{ transition:none !important; } }
 
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
 <nav>
   <div class="logo">Khusss🌸</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#uiux">UI/UX</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="nav-links">
+    <li><a href="#about"    onclick="closeMenu()">About</a></li>
+    <li><a href="#skills"   onclick="closeMenu()">Skills</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+    <li><a href="#uiux"     onclick="closeMenu()">UI/UX</a></li>
+    <li><a href="#contact"  onclick="closeMenu()">Contact</a></li>
   </ul>
 </nav>
 
@@ -339,27 +276,22 @@ footer p{
 <!-- UI/UX -->
 <section id="uiux">
   <h2>Featured UI/UX Designs 🎨</h2>
-
   <div class="gallery">
-
     <div class="project">
       <img src="matcha.png" alt="Matcha Ad">
       <h3>🍵 Matcha Advertisement</h3>
       <p>Minimal green aesthetic ad design with clean typography.</p>
     </div>
-
     <div class="project">
       <img src="shoesale.png" alt="Shoes Ad">
       <h3>👟 Shoes Sale Advertisement</h3>
       <p>Bold promotional design with strong CTA and hierarchy.</p>
     </div>
-
     <div class="project">
       <img src="Furniture.png" alt="Furniture Web">
       <h3>🛋️ Furniture Webpage</h3>
       <p>Modern landing page with clean UI and product layout.</p>
     </div>
-
   </div>
 </section>
 
@@ -374,13 +306,33 @@ footer p{
 <footer>
   <h3>Khushi Aryal</h3>
   <p>Web Developer • UI/UX Learner • Creating clean experiences</p>
-
   <div class="socials">
     <a href="https://github.com/khushiaryal">GitHub</a>
     <a href="https://www.linkedin.com/in/khushi-aryal-92152a351/">LinkedIn</a>
     <a href="mailto:aryalkhushi92@gmail.com">Email</a>
   </div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
+  });
+
+  function closeMenu(){
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }
+</script>
 
 </body>
 </html>
